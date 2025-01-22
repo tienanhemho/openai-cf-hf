@@ -11,7 +11,7 @@ bucket_name = "openai-cf-hg-images"
 preview_bucket_name = "ai-hg-images"
 
 [vars]
-CLOUDFLARE_ACCOUNT_ID = "09fcd959d3815207e18adf9620beac72" # replace with your own.
+CLOUDFLARE_ACCOUNT_ID = "" # replace with your own.
 MODEL_MAPPER = { "gpt-4o-mini" = "meta-llama/Llama-3.1-8B-Instruct" } # Optional
 
 [observability.logs]
