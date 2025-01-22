@@ -1,0 +1,20 @@
+{
+	"name": "template-worker-router",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev index.js --remote",
+		"init-dev": "wrangler r2 bucket create ai-images",
+		"init-prod": "wrangler r2 bucket create openai-cf-images",
+		"start-stackblitz": "WRANGLER_SEND_METRICS=false wrangler dev index.js --remote",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"itty-router": "^4.2.2"
+	},
+	"devDependencies": {
+		"vitest": "^0.31.0",
+		"wrangler": "^3.102.0"
+	}
+}
