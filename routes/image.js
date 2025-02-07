@@ -86,7 +86,7 @@ export const imageGenerationHandler = async (request, env) => {
 
     // if we get here, return a 400 error
     return new Response(JSON.stringify({ error: 'invalid request' }), {
-        status: 400,a
+        status: 400,
         headers: {
             'Content-Type': 'application/json'
         }

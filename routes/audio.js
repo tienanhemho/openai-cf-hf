@@ -81,10 +81,10 @@ export const translationHandler = async (request, env) => {
 			const responseJson = await response.json();
 
 			const response_lang_id = await fetch(`https://api-inference.huggingface.co/models/meta-llama/Llama-3.1-8B-Instruct/v1/chat/completions`, { headers, "method": "POST", body: JSON.stringify({
-				max_tokens: 2048,
-				stream: false,
-				temperature: json.temperature ?? 0.5,
-				top_p: json.top_p ?? 0.7,
+				max_tokens: json.max_tokens ?? 2048,
+				stream: json.stream ?? false,
+				temperature: Number(Number(json.temperature ?? 0.5).toFixed(1)),
+				top_p: json.top_p ?  (json.top_p >= 1 ? 0.9 : (json.top_p <= 0 ? 0.1 : json.top_p)) : 0.7,
 				messages: [
 					{
 						role: 'user',
